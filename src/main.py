@@ -4,7 +4,9 @@ from object_localizer import ObjectLocalizer
 from aircraft import Aircraft
 
 def main():
-    pass
+    uav = Aircraft()
+    detector = ObjectDetector(uav)
+    detector.detect_object()
 
 
 if __name__ == "__main__":

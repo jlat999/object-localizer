@@ -14,7 +14,7 @@ source path/to/your/new/virtual_environment/bin/activate
 ```
 Then you can install the requirements as:
 ```shell
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 You can also update the '*requirements.txt*' file using:
@@ -29,3 +29,20 @@ Please note that the '*requirements.txt*' file should also be updated when neces
 # Contribute 
 To contribute to this project, clone the repository, create a new branch with your changes and add it to the main branch via a pull request.
 NOTE! We make use of black formatter to keep the same format along the project and make the code review easier.
+
+First create and go to your branch:
+```sh
+git checkout -b your_branch_name
+```
+
+Work on your brach and save your work as usual:
+```sh
+git add --all
+git commit -m "mensaje explicando cambios"
+git push origin your_branch_name
+```
+
+Once you are done with your feature, you can merge it to the main branch:
+```sh
+git merge 
+```

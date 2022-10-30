@@ -10,4 +10,4 @@ class ObjectLocalizer:
         """Estimates and returns the object absolute position."""
         x, y = 0
 
-        return (x,y)
+        return (x, y)

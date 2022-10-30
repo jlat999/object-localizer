@@ -1,3 +1,5 @@
+import cv2 as cv
+
 class Aircraft:
     """Contains the transform matrices and sensor data."""
 
@@ -18,4 +20,6 @@ class Aircraft:
         return self.transform_matrix
 
     def get_next_frame(self):
-        pass
+        frame = cv.imread('assets/white_square.png')
+
+        return frame

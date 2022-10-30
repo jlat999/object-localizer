@@ -1,3 +1,6 @@
+import cv2 as cv
+import numpy as np
+
 class ObjectDetector:
     """Algorithms used for the object detection."""
 
@@ -5,21 +8,64 @@ class ObjectDetector:
         self.aircraft = aircraft
         pass
 
-    def preprocess_image(self):
-        frame = self.aircraft.get_next_frame()
-        pass
+    def preprocess_image(self, frame):
+        """Filters the image only leaving certain tones f
+        of white.
+
+        input:
+            - frame (np.array): Image that needs pre-processing.
+        output:
+            - frame_result (np.array): Preprocessed image.
+        """
+        
+        # Convert BGR to HSV
+        frame_hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
+        # Threshold of white in HSV space
+        pure_white_hsv = np.array([0, 0, 255])
+        pale_gray_hsv = np.array([0, 0, 80])
+
+        # Create and use the mask
+        mask = cv.inRange(frame_hsv, pale_gray_hsv, pure_white_hsv)
+        frame_masked_hsv = cv.bitwise_and(frame_hsv, frame_hsv, mask = mask)
+        # Return to BGR format
+        frame_result = cv.cvtColor(frame_masked_hsv, cv.COLOR_HSV2BGR)
+
+        return frame_result
 
     def detect_object(self):
-        pass
+        """Routine that gets a frame, preprocesses it 
+        detects the contours and plots them.
 
-    def draw_bounding_box(self, position, frame):
+        input:
+            - 
+        output:
+            - 
+        """
+        frame = self.aircraft.get_next_frame()
+        frame = self.preprocess_image(frame)
+
+        # Change frame to gray for the findContours algorithm
+        frame_gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+        contours,_=cv.findContours(frame_gray, cv.RETR_TREE,
+                                    cv.CHAIN_APPROX_SIMPLE)
+
+        self.draw_bounding_box(contours, frame)
+
+
+
+    def draw_bounding_box(self, positions, frame):
         """Sets the bounding box of the detected object.
 
         input:
-            - position (tuple(float, float)): Position of 
+            - position (np.array): Position of 
             the upper left corner of the bounding box.
-            - frame (): Image that needs the bounding box.
+            - frame (np.array): Image that needs the bounding box.
         output:
-            - boxed_frame (): image with the bounding box.
+            - frame_boxed (np.array): image with the bounding box.
         """
-        pass
+
+        frame_boxed = cv.drawContours(frame, positions, 0, (0,255,0), 3)
+        cv.imshow("frame_boxed", frame_boxed)
+        cv.waitKey(0)
+
+        return frame_boxed
