@@ -41,8 +41,3 @@ git add --all
 git commit -m "mensaje explicando cambios"
 git push origin your_branch_name
 ```
-
-Once you are done with your feature, you can merge it to the main branch:
-```sh
-git merge 
-```
