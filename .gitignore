@@ -1,3 +1,5 @@
 _ideas
 env
 assets
+.vscode
+src/__pycache__

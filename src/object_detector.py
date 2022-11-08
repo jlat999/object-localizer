@@ -42,10 +42,10 @@ class ObjectDetector:
             - 
         """
         frame = self.aircraft.get_next_frame()
-        frame = self.preprocess_image(frame)
+        processed_frame = self.preprocess_image(frame)
 
         # Change frame to gray for the findContours algorithm
-        frame_gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+        frame_gray = cv.cvtColor(processed_frame, cv.COLOR_BGR2GRAY)
         contours,_=cv.findContours(frame_gray, cv.RETR_TREE,
                                     cv.CHAIN_APPROX_SIMPLE)
 
