@@ -1,0 +1,69 @@
+Microcontrolador ST7 8bit 128 B, 256 B RAM, 128 B, 4 kB Flash, PDIP 16 pines 8MHZ  para controlador de vuelo
+Raspberry Pi 4* no comprada *podemos dar opciones
+Coordenadas de UAv ordenador de abordo
+
+
+PickHawk: ordenador de control de vulo solo a eso
+PX4 hace todas las funciones de vuelo
+
+
+Camara Stereo: 2 objetivos para calculo de profundida / Carmara de una sola lente ¿FPS/resolucion? == 30FPS/720p mínimo 60/1080 max
+PResupuesto camra: 100€
+
+Ordenador de abordo ____ sera donde este la YOLO
+
+
+Estabilizacion de imagenes ___ Algoritmo muy exigente (en tierra)
+*Servidor en tierra --- Problema: delay . Caso estabilizcion de imagen
+
+
+
+¡¡¡¡¡¡¡Pendiente de ver transmision de datos!!!!!!!
+Discretizacion en python (1 nucleo)
+Nucleos de la RB pi 4 --- nucleos 4
+Trasmision/discretizacion de video con C (consejo de Iker)/ 
+
+Siempre estacion de control
+Mirar RN para estabilizar la imagen 
+
+Estabilizacion de imagen por harware o software (para ver)
+
+Asumiendo la estabilidad:
+¡¡¡RN puede estar en vuelo!!!
+
+	imagen (en vuelo) Live Stream ---> 
+	Protocolo de transmision: Radiofrequencia(esta no)/Internet(+probable) prtocolo HTTP TCP ---> 
+	a tierra/ estabilizacion/ reconocimiento de obstaculos ---> 
+
+Velocidad de vuelo 35m/s == 126Km/h
+
+Linux
+RN: YOLO -- box
+¿Cuanto consume la la RN?
+2500-4000mA bateria
+MAVLink protocolo de vuelo (para controladora de vuelo).
+	Pasar de un radio control a un UAV
+calculos en la propia RB pi 4
+CGC
+
+Thershold da problemas con las sombras
+TransferLeraning ___ RN entrenada
+
+Altitud maxima de vuelo == 30 metros
+
+Este año no hay Vision Artificial
+¡¡¡¡¡¡¡¡¡¡Pero a darle Ooooooostia!!!!!
+Trabajamos para detectar objetos/ cualquiera.
+
+Tarjet: por coordenadas 
+Angulo de camara: 45ª (Hipotetico). varias camaras
+
+Coordenadas de UAv ordenador de abordo 
+
+Autodesk --- USA.Empresa de softwares
+Leonardo --- Italiana. Empresa de crecion de helicopteros y material aerodinamico.
+Qinetiq ---- Inglesa. Empresa de militar/ tecnologia de defensa
+Babcock ---- Britanica. Empresa de aeroespacial, de defensa i nuclear
+Ansys ---- USA. Empresa de disseny de programa de simulaciones físicas0
+RS GrassRoots ---- Ni idea chato. pero quien sabe quiza en el futuro son los pròximos Amazons.
+
