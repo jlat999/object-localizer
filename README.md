@@ -1,4 +1,4 @@
-# Introduction (test)
+# Introduction
 The aim of this project is to detect and estimate the absolute position of certain objects in the ground from an aerial system.
 
 # Getting started 
